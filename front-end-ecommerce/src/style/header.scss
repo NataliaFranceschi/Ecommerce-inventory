@@ -1,0 +1,52 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.header {
+    height: 80px;
+    width: 100vw;
+    background-color: $primary-color;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        margin-top: 4px;
+        height: 50px;
+        width: auto;
+        margin-left: 10px;
+    }
+    
+    button {
+        background-color: $primary-color;
+        border: none;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+    svg {
+        color: $bg-color;
+        font-size: 30px;
+    }
+
+    select {
+        border: none;
+        border-radius: 6px;
+        padding: 6px;
+        margin-top: 2px;
+        margin-right: 6px;
+    }
+
+    .icon {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .header {
+        @include column;
+        height: 160px;
+    }
+
+    
+}

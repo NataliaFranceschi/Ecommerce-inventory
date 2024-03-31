@@ -1,0 +1,20 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+
+input {
+    @include inputs;
+    width: 400px;
+    height: 30px;
+}   
+
+.search-bar {
+    display: flex;
+}
+
+@media screen and (max-width: 500px){
+    input {
+        width: 250px;
+    }
+   
+}

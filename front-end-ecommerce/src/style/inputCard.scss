@@ -1,0 +1,43 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.inputCard {
+    @include column;
+    border-radius: 20px;
+    background-color: $terciary-color;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    width: 40vw;
+    min-width: 350px;
+    margin: 10px;
+    height: 500px;
+
+    button {
+        @include orangeButton;
+        padding: 15px;
+        margin-top: 20px;
+    }
+}
+
+.card {
+    @include column;
+        @include box;
+        justify-content: center;
+        height: 400px;
+        width: 70%;
+        img{
+            height: 170px;
+        }
+
+        input {
+            width: 20vw;
+            min-width: 200px;
+        }
+
+}
+
+span {
+    font-size: 13px;
+    margin-top: 2px;
+    color: $alert-color;
+}

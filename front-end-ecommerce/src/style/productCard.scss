@@ -1,0 +1,78 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.productCard {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+
+    .product {
+        @include column;
+        @include box;
+        justify-content: center;
+        height: 300px;
+        width: 20%;
+        min-width: 250px;
+        max-width: 250px;
+        img{
+            height: 170px;
+        }
+        text-align: center;
+        padding: 10px;
+        margin: 1%;
+
+        p {
+            margin: 1px;
+        }
+    }
+
+    .name {
+        color: $primary-color;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .price {
+        color: $secundary-color;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .quantity {
+        font-size: 15px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+
+    .buttons {
+        width: 100%;
+        display: flex ;
+        justify-content: space-between;
+
+        button {
+            @include orangeButton;
+            padding: 5px;
+            height: 30px;
+         }
+    
+        .deleteButton {
+            background-color: $bg-color;
+            border: none;
+        }
+    
+        svg {
+            color: $primary-color;
+            font-size: 30px;
+        }
+
+        span {
+            width: 20%;
+        }
+    }
+
+}

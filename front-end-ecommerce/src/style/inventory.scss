@@ -1,0 +1,14 @@
+@use 'mixins' as *;
+
+.inventory {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 700px){
+    .inventory{
+        @include column;
+    }
+   
+}

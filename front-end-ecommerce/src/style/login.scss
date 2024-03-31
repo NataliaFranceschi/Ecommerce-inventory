@@ -1,0 +1,45 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.login {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary-color;
+
+    form {
+        @include column;
+        justify-content: center;
+        background-color: $bg-color;
+        border-radius: 6px;
+        width: 30%;
+        min-height: 350px;
+        min-width: 250px;
+        max-width: 450px;
+        height: 40%;
+
+        input {
+            @include inputs;
+            padding: 5px;
+            width: 200px
+        }
+
+        button {
+           @include orangeButton;
+        }
+
+        img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+
+        span {
+            font-size: 13px;
+            margin-top: 2px;
+            color: $alert-color;
+        }
+        
+    }
+}
