@@ -7,7 +7,7 @@ import Logo from '../logoBranco.png'
 import { useNavigate } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import ecommerceContext from '../context/ecommerceContext';
-import Filter from './Filter';
+import Sort from './Sort';
 
 function Header() {
     const navigate = useNavigate();
@@ -28,7 +28,7 @@ function Header() {
         <img src={Logo} alt='logo'/>
         <SearchBar/>
         <div className='icon'>
-            <Filter />
+            <Sort />
             <button  type='button' onClick={add} >
             <MdAddCircle />
             </button>

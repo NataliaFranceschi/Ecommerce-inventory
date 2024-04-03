@@ -43,14 +43,14 @@ function Login () {
               name="password"
               value={user.password}
               onChange={ ({target}) => setUser({...user, password: target.value}) }
-              placeholder="Password"
+              placeholder="Senha"
             />
           </label>
           <span>{errorMessage}</span>
           <button
             type="submit"
           >
-            Enter
+            Logar
           </button>
         </form>
       </div>

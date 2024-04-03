@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 import ecommerceContext from '../context/ecommerceContext';
 
-function Filter() {
+function Sort() {
   const { products, setProducts, setUpdate, update } = useContext(ecommerceContext);
   const [option, setOption] = useState("");
 
@@ -26,7 +26,7 @@ function Filter() {
       <select 
         name='filter' 
         onChange={({ target }) => setOption(target.value)}> 
-        <option name='filter' value="">sem filtro</option>
+        <option name='filter' value="">ordenar</option>
         <option name='filter' value="maior quantidade">maior quantidade</option>
         <option name='filter' value="menor quantidade">menor quantidade</option>
       </select>
@@ -34,4 +34,4 @@ function Filter() {
   );
 }
 
-export default Filter;
+export default Sort;
