@@ -31,3 +31,4 @@ A autenticação na API é feita utilizando tokens JWT. Para obter acesso às ro
 ### Utilização
 Após iniciar o servidor de desenvolvimento do frontend, você poderá acessar a interface de usuário básica através do navegador. Uma página de login irá aparecer e utilizando o usuário para teste citado acima será possível realizar operações CRUD nos produtos do inventário.
 
+![inventory](ecommerce-inventory.gif)
