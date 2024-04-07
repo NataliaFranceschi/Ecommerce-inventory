@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 
 public static class DatabaseExtension
 {
@@ -7,11 +8,18 @@ public static class DatabaseExtension
         IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("Default");
+        var dbPassword = configuration["DatabasePassword"];
+        var dbServerName = configuration["DatabaseServerName"];
 
-        services.AddDbContext<AppDbContext>(options => options
-        .UseSqlite(connectionString));
+        var connectionStringBuilder = new SqlConnectionStringBuilder(connectionString);
+        connectionStringBuilder.Password = dbPassword;
+        connectionStringBuilder.DataSource = dbServerName;
 
-        services.AddDbContext<IAppDbContext, AppDbContext>();
+        services.AddDbContext<IAppDbContext, AppDbContext>(options =>
+        {
+            options.UseSqlServer(connectionStringBuilder.ConnectionString);
+        });
+
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
 
