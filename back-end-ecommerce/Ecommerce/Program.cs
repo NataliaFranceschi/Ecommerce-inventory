@@ -47,7 +47,6 @@ app.UseCors(options => options
     .AllowAnyMethod()
     .AllowAnyHeader());
 
-app.ApplyMigrations();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
