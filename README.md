@@ -31,3 +31,42 @@ A autenticação na API é feita utilizando tokens JWT. Para obter acesso às ro
 ### Utilização
 Após iniciar o servidor de desenvolvimento do frontend, você poderá acessar a interface de usuário básica através do navegador. Uma página de login irá aparecer e utilizando o usuário para teste citado acima será possível realizar operações CRUD nos produtos do inventário.
 
+![inventory](ecommerce-inventory.gif)
+
+## Implementação AWS
+### 1. Migração do Banco de Dados para o SQL Server: (O AWS RDS não suporta SQLite diretamente)
+•	Exporte os dados do banco de dados SQLite para um formato compatível com o SQL Server, como um arquivo .sql.<br>
+•	No Console AWS, navegue até o serviço AWS Database Migration Service (DMS).<br>
+•	Crie uma nova tarefa de migração, apontando o banco de dados de origem para o arquivo .sql exportado e configurando o destino como uma instância do Amazon RDS com SQL Server.<br>
+•	Execute a tarefa de migração e verifique se ela é concluída com sucesso.<br>
+### 2. Implantação do Backend:
+•	Acesse o console da AWS e vá para o serviço EC2. <br>
+• Crie uma nova instância EC2 com uma imagem do Windows Server.<br>
+• Certifique-se de abrir as portas necessárias (exemplo, porta 5150 para o servidor backend).<br>
+•	Conecte-se à instância EC2 via SSH (no caso de Linux) ou RDP (no caso de Windows).<br>
+•	Instale o .NET Core SDK na instância EC2 seguindo as instruções da Microsoft.<br>
+•	Clone o repositório do projeto no diretório desejado na instância EC2.<br>
+•	Atualize a string de conexão do banco de dados no projeto ASP.NET Core para apontar para a instância do Amazon RDS com SQL Server.<br>
+•	Execute os comandos necessários para restaurar as dependências do projeto e iniciar o servidor backend.<br>
+### 3. Implantação do Frontend:
+• Construa o aplicativo React executando o comando <strong>npm run build</strong>.<br>
+• Vá para o serviço S3 no console da AWS.<br>
+• Crie um novo bucket S3 para armazenar os arquivos estáticos do frontend.<br>
+• Faça upload dos arquivos de construção para um bucket S3.<br>
+• Configure o bucket S3 para hospedar um site estático e defina as políticas de acesso conforme necessário.<br>
+• Configure o frontend para fazer chamadas à API RESTful do backend hospedado na instância EC2.<br>
+
+## Segurança
+É recomendado a mudança da chave Secret para o AWS Secrets, mas para isso algumas alterações devem ser feitas.<br>
+
+### 1. Criar um Novo Segredo no AWS Secrets Manager:
+• Acesse o Console do AWS Secrets Manager.<br>
+• Clique em "Store a new secret".<br>
+• Selecione "Other type of secrets".<br>
+• Insira o nome e a descrição do seu segredo.<br>
+• No campo "Secret key/value", insira a sua chave secreta JWT. Certifique-se de que a chave seja armazenada de forma segura e mantenha sua confidencialidade.<br>
+### 2. Configurar as Permissões de Acesso:
+• Configure as permissões de acesso para o seu segredo, especificando quais entidades ou serviços têm permissão para acessá-lo.<br>
+### 3. Atualizar o Código do Backend:
+• No código do seu backend, atualize a lógica responsável por recuperar a chave secreta para que ela busque no AWS Secrets Manager em vez de nos User Secrets.<br>
+• Utilize o SDK do AWS Secrets Manager para fazer a chamada e recuperar a chave secreta durante a inicialização da aplicação.<br>
