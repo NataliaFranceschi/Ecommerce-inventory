@@ -1,10 +1,8 @@
-namespace TrybeHotel.Test;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Text;
-using System.Net.Http;
 using FluentAssertions;
 using System.Net.Http.Json;
 
