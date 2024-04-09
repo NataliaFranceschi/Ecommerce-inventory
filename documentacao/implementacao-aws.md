@@ -1,47 +1,47 @@
-# ImplementaÁ„o AWS
+# Implementa√ß√£o AWS
 
-#### A AWS disponibiliza diversos serviÁcos que possibilitam subir um projeto para nuvem. Para projetos menores o EC2 È ideal pois permite aos usu·rios alugar computadores virtuais para executar seus prÛprios aplicativos. Entretanto para maior escalabilidade a AWS disponibiliza outros serviÁos com melhor desempenho. Em seguida, coloquei duas formas para subir esse projeto, com maior e menor escalabilidade.
+#### A AWS disponibiliza diversos servi√ßos que possibilitam subir um projeto para nuvem. Para projetos menores o EC2 √© ideal pois permite aos usu√°rios alugar computadores virtuais para executar seus pr√≥prios aplicativos. Entretanto para maior escalabilidade a AWS disponibiliza outros servi√ßos com melhor desempenho. Em seguida, coloquei duas formas para subir esse projeto, com maior e menor escalabilidade.
 
-## OpÁ„o com EC2
-ï	Acesse o console da AWS e v· para o serviÁo EC2. <br>
-ï	Crie uma nova inst‚ncia EC2 com uma imagem do Windows Server.<br>
-ï	Conecte-se ‡ inst‚ncia EC2 via SSH (no caso de Linux) ou RDP (no caso de Windows).<br>
-ï	Instale o .NET Core SDK na inst‚ncia EC2 seguindo as instruÁıes da Microsoft.<br>
-ï	Clone o repositÛrio do projeto no diretÛrio desejado na inst‚ncia EC2.<br>
-ï	Crie um User Secrets no backend com as chaves especificadas no README.<br>
-ï	Acesse o console da AWS e v· para o serviÁo RDS. <br>
-ï	Crie uma inst‚ncia do banco de dados SQL Server na AWS RDS e configure para conectar-se a ao recurso de computaÁ„o EC2 criado.<br>
-ï	Atualize a string de conex„o do banco de dados no projeto ASP.NET Core para apontar para a inst‚ncia do Amazon RDS com SQL Server.<br>
-ï	Substitua o uso de "localhost" no cÛdigo frontend e backend pelo endereÁo IP p˙blico do EC2. Isso inclui a configuraÁ„o do Axios e qualquer outra biblioteca ou configuraÁ„o que faÁa referÍncia ao endereÁo do servidor.<br>
-ï	Execute os comandos necess·rios para restaurar as dependÍncias do projeto e iniciar o servidor backend e frontend.<br>
+## Op√ß√£o com EC2
+‚Ä¢	Acesse o console da AWS e v√° para o servi√ßo EC2. <br>
+‚Ä¢	Crie uma nova inst√¢ncia EC2 com uma imagem do Windows Server.<br>
+‚Ä¢	Conecte-se √† inst√¢ncia EC2 via SSH (no caso de Linux) ou RDP (no caso de Windows).<br>
+‚Ä¢	Instale o .NET Core SDK na inst√¢ncia EC2 seguindo as instru√ß√µes da Microsoft.<br>
+‚Ä¢	Clone o reposit√≥rio do projeto no diret√≥rio desejado na inst√¢ncia EC2.<br>
+‚Ä¢	Crie um User Secrets no backend com as chaves especificadas no README.<br>
+‚Ä¢	Acesse o console da AWS e v√° para o servi√ßo RDS. <br>
+‚Ä¢	Crie uma inst√¢ncia do banco de dados SQL Server na AWS RDS e configure para conectar-se a ao recurso de computa√ß√£o EC2 criado.<br>
+‚Ä¢	Atualize a string de conex√£o do banco de dados no projeto ASP.NET Core para apontar para a inst√¢ncia do Amazon RDS com SQL Server.<br>
+‚Ä¢	Substitua o uso de "localhost" no c√≥digo frontend e backend pelo endere√ßo IP p√∫blico do EC2. Isso inclui a configura√ß√£o do Axios e qualquer outra biblioteca ou configura√ß√£o que fa√ßa refer√™ncia ao endere√ßo do servidor.<br>
+‚Ä¢	Execute os comandos necess√°rios para restaurar as depend√™ncias do projeto e iniciar o servidor backend e frontend.<br>
 
-## OpÁ„o utilizando v·rios serviÁos da AWS
+## Op√ß√£o utilizando v√°rios servi√ßos da AWS
 ### 1. Banco de Dados:
-ï	Acesse o console da AWS e navegue atÈ o serviÁo RDS.<br>
-ï	Crie uma nova inst‚ncia de banco de dados SQLServer com as configuraÁıes necess·rias (tamanho da inst‚ncia, vers„o do banco de dados, nome de usu·rio e senha).<br>
-ï	Anote o endpoint do banco de dados, nome de usu·rio e senha para serem utilizados na configuraÁ„o do backend.<br>
+‚Ä¢	Acesse o console da AWS e navegue at√© o servi√ßo RDS.<br>
+‚Ä¢	Crie uma nova inst√¢ncia de banco de dados SQL Server com as configura√ß√µes necess√°rias (tamanho da inst√¢ncia, vers√£o do banco de dados, nome de usu√°rio e senha).<br>
+‚Ä¢	Anote o endpoint do banco de dados, nome de usu√°rio e senha para serem utilizados na configura√ß√£o do backend.<br>
 ### 2. Backend:
-ï	No console da AWS, acesse o serviÁo Lambda.<br>
-ï	Crie uma nova funÁ„o Lambda para o backend.<br>
-ï	FaÁa o upload do cÛdigo do backend para a funÁ„o Lambda.<br>
-ï	Configure a funÁ„o Lambda para acessar o banco de dados RDS criado anteriormente.<br>
-ï	Acesse o serviÁo API Gateway no console da AWS.<br>
-ï	Crie uma nova API REST no API Gateway.<br>
-ï	Crie recursos e mÈtodos na API de acordo com as rotas do backend.<br>
-ï	Configure os mÈtodos para integrar com a funÁ„o Lambda criada.<br>
-ï	Deploy a API Gateway.<br>
-### 3. AutenticaÁ„o JWT:
-ï	Crie um User Pool no Amazon Cognito para gerenciar os usu·rios da aplicaÁ„o.<br>
-ï	Configure um App Client no User Pool para sua aplicaÁ„o e habilite a geraÁ„o de tokens JWT.<br>
-ï	No backend:
-ï	Utilize a SDK do Cognito para autenticar usu·rios e validar tokens JWT recebidos.<br>
-ï	Implemente login, logout e registro de usu·rios utilizando as APIs do Cognito.<br>
-ï	Configure permissıes da funÁ„o Lambda para acessar o Cognito.<br>
+‚Ä¢	No console da AWS, acesse o servi√ßo Lambda.<br>
+‚Ä¢	Crie uma nova fun√ß√£o Lambda para o backend.<br>
+‚Ä¢	Fa√ßa o upload do c√≥digo do backend para a fun√ß√£o Lambda.<br>
+‚Ä¢	Configure a fun√ß√£o Lambda para acessar o banco de dados RDS criado anteriormente.<br>
+‚Ä¢	Acesse o servi√ßo API Gateway no console da AWS.<br>
+‚Ä¢	Crie uma nova API REST no API Gateway.<br>
+‚Ä¢	Crie recursos e m√©todos na API de acordo com as rotas do backend.<br>
+‚Ä¢	Configure os m√©todos para integrar com a fun√ß√£o Lambda criada.<br>
+‚Ä¢	Deploy a API Gateway.<br>
+### 3. Autentica√ß√£o JWT:
+‚Ä¢	Crie um User Pool no Amazon Cognito para gerenciar os usu√°rios da aplica√ß√£o.<br>
+‚Ä¢	Configure um App Client no User Pool para sua aplica√ß√£o e habilite a gera√ß√£o de tokens JWT.<br>
+‚Ä¢	No backend:<br>
+‚Ä¢	Utilize a SDK do Cognito para autenticar usu√°rios e validar tokens JWT recebidos.<br>
+‚Ä¢	Implemente login, logout e registro de usu√°rios utilizando as APIs do Cognito.<br>
+‚Ä¢	Configure permiss√µes da fun√ß√£o Lambda para acessar o Cognito.<br>
 ### 4. Frontend:
-ï	No console da AWS, acesse o serviÁo S3.<br>
-ï	Crie um novo bucket S3 para hospedar o site est·tico.<br>
-ï	FaÁa o upload do cÛdigo do frontend para o bucket S3.<br>
-ï	Habilite o hosting de site est·tico no bucket S3 e configure as opÁıes necess·rias, como arquivo de Ìndice e erro.<br>
-ï	Configure a polÌtica de bucket para permitir acesso p˙blico ao conte˙do.<br>
+‚Ä¢	No console da AWS, acesse o servi√ßo S3.<br>
+‚Ä¢	Crie um novo bucket S3 para hospedar o site est√°tico.<br>
+‚Ä¢	Fa√ßa o upload do c√≥digo do frontend para o bucket S3.<br>
+‚Ä¢	Habilite o hosting de site est√°tico no bucket S3 e configure as op√ß√µes necess√°rias, como arquivo de √≠ndice e erro.<br>
+‚Ä¢	Configure a pol√≠tica de bucket para permitir acesso p√∫blico ao conte√∫do.<br>
 
 
