@@ -1,15 +1,15 @@
-# RelatÛrio do projeto 
+# Relat√≥rio do projeto 
 ## Backend:
-ï	<strong>Escolha de Tecnologia:</strong> Optei por C# ASP.NET Core devido ‡ sua robustez, desempenho e por oferecer uma ampla gama de bibliotecas, frameworks e ferramentas disponÌveis para auxiliar no desenvolvimento de aplicativos web, incluindo acesso a bancos de dados e autenticaÁ„o. AlÈm de ter o swagger que facilita a documentaÁ„o da API.<br>
-ï	<strong>Estrutura do CÛdigo:</strong> Utilizei o padr„o MVC para organizar o cÛdigo de forma clara, facilitando a manutenÁ„o, extensibilidade e testabilidade do sistema.<br>
-ï	<strong>Banco de Dados:</strong> no projeto foi utilizado SQLServer por ser um banco mais robusto com suporte na AWS.<br>
+‚Ä¢	<strong>Escolha de Tecnologia:</strong> Optei por C# ASP.NET Core devido √† sua robustez, desempenho e por oferecer uma ampla gama de bibliotecas, frameworks e ferramentas dispon√≠veis para auxiliar no desenvolvimento de aplicativos web, incluindo acesso a bancos de dados e autentica√ß√£o. Al√©m de ter o swagger que facilita a documenta√ß√£o da API.<br>
+‚Ä¢	<strong>Estrutura do C√≥digo:</strong> Utilizei o padr√£o MVC para organizar o c√≥digo de forma clara, facilitando a manuten√ß√£o, extensibilidade e testabilidade do sistema.<br>
+‚Ä¢	<strong>Banco de Dados:</strong> no projeto foi utilizado SQLServer por ser um banco mais robusto com suporte na AWS.<br>
 ## Frontend:
-ï	<strong>Escolha de Tecnologia:</strong> Optei por React com Vite devido ao ambiente de desenvolvimento r·pido e ‡ capacidade de componentizaÁ„o, proporcionando p·ginas com melhor usabilidade e cÛdigo mais claro.<br>
-ï	<strong>IntegraÁ„o com Backend:</strong> Utilizei axios para realizar chamadas ‡ API RESTful, pela facilidade de uso, garantindo uma comunicaÁ„o eficiente entre frontend e backend.<br>
-ï	<strong>Armazenamento do Token:</strong> Para armazenar o token de autenticaÁ„o usei o local storage, garantindo persistÍncia entre sessıes.<br>
-ï	<strong>EstilizaÁ„o:</strong> Escolhi o Sass para estilizaÁ„o pela sua capacidade de modularizaÁ„o e reutilizaÁ„o de estilos, o que permitiu manter um cÛdigo limpo e organizado facilitando a manutenÁ„o e escalabilidade do frontend.<br>
+‚Ä¢	<strong>Escolha de Tecnologia:</strong> Optei por React com Vite devido ao ambiente de desenvolvimento r√°pido e √† capacidade de componentiza√ß√£o, proporcionando p√°ginas com melhor usabilidade e c√≥digo mais claro.<br>
+‚Ä¢	<strong>Integra√ß√£o com Backend:</strong> Utilizei axios para realizar chamadas √† API RESTful, pela facilidade de uso, garantindo uma comunica√ß√£o eficiente entre frontend e backend.<br>
+‚Ä¢	<strong>Armazenamento do Token:</strong> Para armazenar o token de autentica√ß√£o usei o local storage, garantindo persist√™ncia entre sess√µes.<br>
+‚Ä¢	<strong>Estiliza√ß√£o:</strong> Escolhi o Sass para estiliza√ß√£o pela sua capacidade de modulariza√ß√£o e reutiliza√ß√£o de estilos, o que permitiu manter um c√≥digo limpo e organizado facilitando a manuten√ß√£o e escalabilidade do frontend.<br>
 ## Problemas Enfrentados:
-ï	<strong>Escolha banco de dados:</strong> A priori tinha escolhido o SQLite pela simplicidade de configuraÁ„o e uso, mas como n„o tem suporte na RDL da AWS seria necess·rio fazer a migraÁ„o para outro banco quando fosse fazer a implementaÁ„o, ent„o mudei para o SqlServer.<br>
-ï	<strong>Testes de IntegraÁ„o:</strong> Depois que fiz a mudanÁa de banco de dados tive que alterar os testes pois da forma que estava dava conflito com o banco de dados, dizia que j· existia um banco criado.<br>
-ï	<strong>Outra Tecnologia:</strong> Tentei tambÈm desenvolver um front-end com AngularJS, interface que tive que aprender do zero, ent„o enfrentei algumas dificuldades em deixa-la com a usabilidade desejada. <br>
-ï	<strong>AWS:</strong> Tive dificuldades em subir o projeto utilizando o EC2 na AWS, o servidor Windows criado era muito devagar, dificultando rodar o cÛdigo.
+‚Ä¢	<strong>Escolha banco de dados:</strong> A priori tinha escolhido o SQLite pela simplicidade de configura√ß√£o e uso, mas como n√£o tem suporte na RDL da AWS seria necess√°rio fazer a migra√ß√£o para outro banco quando fosse fazer a implementa√ß√£o, ent√£o mudei para o SqlServer.<br>
+‚Ä¢	<strong>Testes de Integra√ß√£o:</strong> Depois que fiz a mudan√ßa de banco de dados tive que alterar os testes pois da forma que estava dava conflito com o banco de dados, dizia que j√° existia um banco criado.<br>
+‚Ä¢	<strong>Outra Tecnologia:</strong> Tentei tamb√©m desenvolver um [front-end com AngularJS](https://github.com/NataliaFranceschi/Ecommerce-inventory-angularJS), interface que tive que aprender do zero, ent√£o enfrentei algumas dificuldades em deixa-la com a usabilidade desejada. <br>
+‚Ä¢	<strong>AWS:</strong> Tive dificuldades em subir o projeto utilizando o EC2 na AWS, o servidor Windows criado era muito devagar, dificultando rodar o c√≥digo.
